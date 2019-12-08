@@ -1,6 +1,6 @@
 <?php
-$server = "localhost";
-$usr = "root";
+$server = ""; // Change with your settings
+$usr = "";
 $pass = "";
 $db = "scanneroo";
 
