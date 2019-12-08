@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- QR Reader Depedencies -->
+    <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js">
+    </script>
+
+    <!-- JS Driver -->
+    <script type="text/javascript" src="js/delete.js"></script>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scanneroo</title>
+
+    <style>
+        a {
+            text-decoration: none;
+            padding: 2%;
+            border: 1px solid black;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        #header {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        input,
+        label {
+            vertical-align: middle
+        }
+        
+        .qrcode-text {
+            padding-right: 1.7em;
+            margin-right: 0
+        }
+        
+        .qrcode-text-btn {
+            display: inline-block;
+            background: url(qr.svg) 50% 50% no-repeat;
+            height: 1em;
+            width: 1.7em;
+            margin-left: -1.7em;
+            cursor: pointer
+        }
+        
+        .qrcode-text-btn>input[type=file] {
+            position: absolute;
+            overflow: hidden;
+            width: 1px;
+            height: 1px;
+            opacity: 0
+        }
+        
+        #credits {
+            text-align: center;
+            margin-top: 10%;
+        }
+        
+        #content {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <h1>Scanneroo</h1>
+        <h3>Delete Entry</h3>
+    </div>
+    <div id="content">
+        <input id="ent-code" type=text size=20 placeholder="Entry Code" class=qrcode-text onkeyup="stoppedTyping()"><label class=qrcode-text-btn><input type=file accept="image/*" capture=environment onchange="openQRCamera(this);" tabindex=-1></label>
+        <input type=button value="Go" onclick="del();">
+
+        <div id="result" style="margin-top: 5%; border: thin;">
+        </div>
+    </div>
+    <div id="credits">
+        by <a href="github.com/fauh45" style="border:0px; padding: 0%;">fauh45</a>
+    </div>
+</body>
+
+</html>
